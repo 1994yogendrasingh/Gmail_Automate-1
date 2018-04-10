@@ -21,6 +21,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -36,6 +37,7 @@ import com.bdhillon.ReadExcel.Xls_Reader;
 
 
 public class TestBase {
+	
 	public final Logger log = Logger.getLogger(TestBase.class.getName());
 	public static WebDriver driver;
 	public DesiredCapabilities cap;
@@ -45,8 +47,8 @@ public class TestBase {
 	public ExtentReports extent=ExtentManager.getInstance();
 	public static ExtentTest logger;
 	
-
 	public  void init() {
+		
 		try {
 			prop = new Properties();
 
@@ -59,7 +61,7 @@ public class TestBase {
 			
 			//reader = new Xls_Reader(System.getProperty("user.dir")+ "\\src\\main\\java\\com\\legacyTeam\\testDataFile\\TestData.xlsx");
 			
-			reader = new Xls_Reader("C:\\Users\\Dhillon\\git\\XAP_Automate\\Ant\\build\\TestDataFile\\TestData.xlsx");
+			reader = new Xls_Reader("C:\\Users\\balwinder\\git\\Gmail_Automate\\src\\main\\java\\com\\bdhillon\\TestData\\TestDataFile.xlsx");
 			PropertyConfigurator.configure(log4jconfig);
 			
 			
@@ -79,7 +81,7 @@ public class TestBase {
 			
 	
 			System.setProperty("webdriver.chrome.driver",
-			System.getProperty("user.dir")	+"\\Drviers\\chromedriver.exe");
+			System.getProperty("user.dir")	+"\\Drivers\\chromedriver.exe");
 			log.info("Creating obejct of browser " + Browser);
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
@@ -89,9 +91,10 @@ public class TestBase {
 		else if(Browser.equalsIgnoreCase("firefox")){
 			
 			
-			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")	+"\\Drviers\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir")	+"\\Drivers\\geckodriver.exe");
 			
-			driver = new FirefoxDriver() ;
+			driver=new FirefoxDriver();
+			
 		}
 	}
 
@@ -106,6 +109,7 @@ public class TestBase {
 	}
 		
 		//******************************Action**********************************************//		
+		
 		public void action(WebElement e){
 		Actions act=new Actions(driver);
 		act.moveToElement(e).build().perform();
@@ -125,7 +129,7 @@ public class TestBase {
 			
 			File src= ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			
-			String path=System.getProperty("user.dir")+"\\src\\main\\java\\com\\leagacyTeam\\screenshots\\" +name+".png";
+			String path=System.getProperty("user.dir")+"\\src\\main\\java\\com\\bdhillon\\Screenshots\\" +name+".png";
 			
 			
 			try{

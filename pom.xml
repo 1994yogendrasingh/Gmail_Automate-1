@@ -32,11 +32,13 @@
 
 
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>3.6.0</version>
+    <version>3.11.0</version>
 </dependency>
+
 
   <!-- pom.xml -->
 <dependency>

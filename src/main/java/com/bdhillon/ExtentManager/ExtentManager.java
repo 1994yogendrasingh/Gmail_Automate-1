@@ -24,8 +24,8 @@ public class ExtentManager {
 		
 		HtmlReporter=new ExtentHtmlReporter(System.getProperty("user.dir")+"//Report//MyOwnReport.html");
 		HtmlReporter.config().setChartVisibilityOnOpen(true);
-		HtmlReporter.config().setReportName("Top 10 Test Cases");
-		HtmlReporter.config().setDocumentTitle("XAP Automation");
+		HtmlReporter.config().setReportName("Automating Gmail with Selenium");
+		HtmlReporter.config().setDocumentTitle("Gmail Automation");
 		HtmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
 		HtmlReporter.config().setTheme(Theme.STANDARD);
 	
@@ -44,7 +44,7 @@ public class ExtentManager {
 			
 		}
 		if(result.getStatus()==ITestResult.FAILURE){
-			System.out.println("Hi");
+			
 			logger.log(com.aventstack.extentreports.Status.FAIL , MarkupHelper.createLabel(result.getName() +"Test Case is Failed", ExtentColor.RED));
 			logger.fail(result.getThrowable());
 		}
