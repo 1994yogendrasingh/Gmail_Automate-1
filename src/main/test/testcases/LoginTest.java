@@ -2,6 +2,8 @@ package testcases;
 
 import java.util.Hashtable;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -19,11 +21,34 @@ public static Assert asrt;
 	public void LoginTest(Hashtable <String,String> data){
 		
 		logger=extent.createTest(" TC01_LoginTest "+data);
+		
 		selectBrowser(data.get("Browser"));
+		
 		logger.info("********** Starting Test Case **********");
 		
+		driver.get(prop.getProperty("Application_URL"));
 		
-		driver.get("https://bugzilla.mozilla.org/show_bug.cgi?id=1410838");
+		fluentWait("LoginEmail_tagName");
+		getElement("LoginEmail_tagName").sendKeys(data.get("Username"));
+		
+		logger.info("Entered the Username of the logger.Username is : " + data.get("Username"));
+		
+		getElement("nxtbtn_css").click();
+		waitinSec(3);
+		
+		logger.info("Clicking on the next button. ");
+		
+		fluentWait("LoginPassword_css");
+		
+		getElement("LoginPassword_css").sendKeys("Password");
+		
+		TakeScreenshot();
+		
+		waitinSec(2);
+		
+		logger.info("Entered the Password of the logger.");
+		
+		
 		
 		logger.info("********** Ending Test Case **********");
 		

@@ -6,7 +6,7 @@
       <class name="testcases.LoginTest">
         <methods>
           <include name="quite"/>
-          <include name="LoginTest" invocation-numbers="0 1"/>
+          <include name="LoginTest" invocation-numbers="0"/>
           <include name="init"/>
         </methods>
       </class> <!-- testcases.LoginTest -->

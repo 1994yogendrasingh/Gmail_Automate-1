@@ -203,6 +203,12 @@ public class TestBase {
 			element=driver.findElement(By.name(prop.getProperty(elementLocator)));
 			return element;
 		}
+		else if(elementLocator.contains("_linkText")){
+			logger.log(Status.INFO, "Searching the Element with "+elementLocator);
+			element=driver.findElement(By.linkText(prop.getProperty(elementLocator)));
+			return element;
+		}
+		
 		
 	return element;
 	}
