@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="16744" started-at="2018-04-12T07:02:56Z" finished-at="2018-04-12T07:03:12Z">
+  <suite name="Default suite" duration-ms="21657" started-at="2018-04-13T04:12:25Z" finished-at="2018-04-13T04:12:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="16744" started-at="2018-04-12T07:02:56Z" finished-at="2018-04-12T07:03:12Z">
+    <test name="Default test" duration-ms="21657" started-at="2018-04-13T04:12:25Z" finished-at="2018-04-13T04:12:47Z">
       <class name="testcases.LoginTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:testcases.LoginTest@6279ee]" name="init" is-config="true" duration-ms="468" started-at="2018-04-12T12:32:55Z" finished-at="2018-04-12T12:32:56Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:testcases.LoginTest@581ac8a8]" name="init" is-config="true" duration-ms="17521" started-at="2018-04-13T09:42:08Z" finished-at="2018-04-13T09:42:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="LoginTest(java.util.Hashtable)[pri:0, instance:testcases.LoginTest@6279ee]" name="LoginTest" duration-ms="16712" started-at="2018-04-12T12:32:56Z" data-provider="getData" finished-at="2018-04-12T12:33:12Z">
+        <test-method status="PASS" signature="LoginTest(java.util.Hashtable)[pri:0, instance:testcases.LoginTest@581ac8a8]" name="LoginTest" duration-ms="15298" started-at="2018-04-13T09:42:32Z" data-provider="getData" finished-at="2018-04-13T09:42:47Z">
           <params>
             <param index="0">
               <value>
@@ -22,7 +22,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoginTest -->
-        <test-method status="PASS" signature="quite()[pri:0, instance:testcases.LoginTest@6279ee]" name="quite" is-config="true" duration-ms="1104" started-at="2018-04-12T12:33:13Z" finished-at="2018-04-12T12:33:14Z">
+        <test-method status="PASS" signature="quite()[pri:0, instance:testcases.LoginTest@581ac8a8]" name="quite" is-config="true" duration-ms="1102" started-at="2018-04-13T09:42:47Z" finished-at="2018-04-13T09:42:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- quite -->

@@ -58,10 +58,10 @@ public class TestBase {
 			prop.load(fsm);
 			fsm.close();
 			String log4jconfig = "log4j.properties";
+			System.out.println(System.getProperty("user.dir")+ "\\src\\main\\java\\com\\bdhillon\\testData\\TestDataFile.xlsx");
+			reader = new Xls_Reader(System.getProperty("user.dir")+ "\\src\\main\\java\\com\\bdhillon\\testData\\TestDataFile.xlsx");
+			//E:\WorkSpace2\Gmail_Automate\src\main\java\com\bdhillon\TestData
 			
-			//reader = new Xls_Reader(System.getProperty("user.dir")+ "\\src\\main\\java\\com\\legacyTeam\\testDataFile\\TestData.xlsx");
-			
-			reader = new Xls_Reader("C:\\Users\\balwinder\\git\\Gmail_Automate\\src\\main\\java\\com\\bdhillon\\TestData\\TestDataFile.xlsx");
 			PropertyConfigurator.configure(log4jconfig);
 			
 			
