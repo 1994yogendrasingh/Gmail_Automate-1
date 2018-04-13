@@ -175,12 +175,13 @@ public class TestBase {
 		else if(elementLocator.contains("_id")){
 			logger.log(Status.INFO, "Searching the Element with "+elementLocator);
 			element=driver.findElement(By.id(prop.getProperty(elementLocator)));
-			System.out.println(element +"found");
+			
 			return element;
 		}
 		else if(elementLocator.contains("_css")){
 			logger.log(Status.INFO, "Searching the Element with "+elementLocator);
 			element=driver.findElement(By.cssSelector(prop.getProperty(elementLocator)));
+			System.out.println(element +"found");
 			return element;
 		}
 		else if(elementLocator.contains("_linktext")){
