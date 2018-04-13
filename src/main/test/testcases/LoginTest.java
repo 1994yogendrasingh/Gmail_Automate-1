@@ -2,23 +2,32 @@ package testcases;
 
 import java.util.Hashtable;
 
+import net.bytebuddy.implementation.bytecode.Throw;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.SkipException;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.bdhillon.TestBase.TestBase;
 
 public class LoginTest extends TestBase{
 	
 	
-public static Assert asrt;
+public static SoftAssert asrt;
 	
 	@Test (dataProvider="getData")
 	public void LoginTest(Hashtable <String,String> data){
+	
+		if(data.get("RunMode").equalsIgnoreCase("N")){
+			logger.info("Test Case is Skipped"  );
+			throw new SkipException("Test Case Skipped");
+		}
 		
 		logger=extent.createTest(" TC01_LoginTest "+data);
 		
@@ -40,7 +49,7 @@ public static Assert asrt;
 		
 		fluentWait("LoginPassword_css");
 		
-		getElement("LoginPassword_css").sendKeys("Password");
+		getElement("LoginPassword_css").sendKeys(data.get("Password"));
 		
 		TakeScreenshot();
 		
@@ -48,7 +57,15 @@ public static Assert asrt;
 		
 		logger.info("Entered the Password of the logger.");
 		
+		getElement("SignBtn_css").click();
 		
+		waitinSec(3);
+		
+		String title=driver.getTitle();
+		fluentWait("waitingElement_css");
+		boolean cond=title.contains("Gmail");
+		System.out.println(cond);
+		asrt.assertEquals(true,cond );
 		
 		logger.info("********** Ending Test Case **********");
 		
