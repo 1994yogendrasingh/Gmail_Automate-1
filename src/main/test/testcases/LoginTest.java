@@ -37,7 +37,7 @@ public class LoginTest extends TestBase {
 
 		logger.info("********** Starting Test Case **********");
 
-		driver.get(prop.getProperty("Application_URL"));
+		
 
 		fluentWait("LoginEmail_tagName");
 
@@ -67,7 +67,7 @@ public class LoginTest extends TestBase {
 		
 
 			fluentWait("waitingElement_xpath");
-			String title = driver.getTitle();
+			String title = getTitle();
 			boolean cond = title.contains("Inbox");
 	
 

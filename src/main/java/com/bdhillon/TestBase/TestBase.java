@@ -85,6 +85,7 @@ public class TestBase {
 			log.info("Creating obejct of browser " + Browser);
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
+			driver.get(prop.getProperty("Application_URL"));
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		}
@@ -94,6 +95,7 @@ public class TestBase {
 			System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir")	+"\\Drivers\\geckodriver.exe");
 			
 			driver=new FirefoxDriver();
+			driver.get(prop.getProperty("Application_URL"));
 			
 		}
 	}
@@ -253,6 +255,10 @@ public class TestBase {
 		jse.executeScript("window.scrollBy(0,"+x+")", "");
 	}
 	
+//********************************************TitleOfThePage*********************************************//
 	
+	public String getTitle(){
+		return driver.getTitle();
+	}
 	
 }
